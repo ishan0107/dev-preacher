@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Template</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+```
+body {
+  background: #0d0d0d;
+  font-family: 'DM Sans', sans-serif;
+  color: #f0ece4;
+}
+
+.email-wrapper {
+  max-width: 620px;
+  margin: 40px auto;
+  background: #111111;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* ── HERO BANNER ── */
+.hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1200 50%, #0d0a00 100%);
+  padding: 52px 48px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: 50%;
+  transform: translateX(-50%);
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+
+.zero-percent {
+  font-family: 'Playfair Display', serif;
+  font-size: 86px;
+  font-weight: 900;
+  line-height: 0.95;
+  color: #d4af37;
+  letter-spacing: -3px;
+  text-shadow: 0 0 60px rgba(212,175,55,0.25);
+}
+
+.zero-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: rgba(212,175,55,0.7);
+  margin-top: 8px;
+}
+
+.divider-gold {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  margin: 28px auto;
+}
+
+/* ── GROW SECTION ── */
+.grow-section {
+  padding: 44px 48px 36px;
+  text-align: center;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.grow-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #f0ece4;
+}
+
+.grow-headline span {
+  color: #d4af37;
+  font-style: italic;
+}
+
+.grow-sub {
+  font-size: 14px;
+  color: rgba(240,236,228,0.5);
+  margin-top: 12px;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+/* ── USP GRID ── */
+.usps {
+  padding: 40px 48px;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.usps-title {
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: rgba(201,162,39,0.6);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.usp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.usp-item {
+  background: #161616;
+  border: 1px solid #222;
+  border-left: 3px solid #d4af37;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.2s;
+}
+
+.usp-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.usp-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e8e0d0;
+  line-height: 1.3;
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  padding: 44px 48px 48px;
+  text-align: center;
+  background: linear-gradient(180deg, #111 0%, #130f00 100%);
+}
+
+.cta-pre {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: rgba(212,175,55,0.5);
+  margin-bottom: 14px;
+}
+
+.cta-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #f0ece4;
+  margin-bottom: 28px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #d4af37;
+  color: #0a0800;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  padding: 17px 44px;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.cta-btn:hover {
+  background: #e8c84a;
+  transform: translateY(-1px);
+}
+
+.cta-note {
+  font-size: 12px;
+  color: rgba(240,236,228,0.3);
+  margin-top: 18px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: #0a0a0a;
+  padding: 24px 48px;
+  text-align: center;
+  border-top: 1px solid #1a1a1a;
+}
+
+.footer p {
+  font-size: 11px;
+  color: rgba(240,236,228,0.25);
+  line-height: 1.8;
+}
+
+.footer a {
+  color: rgba(201,162,39,0.5);
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  .hero, .grow-section, .usps, .cta-section, .footer {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .zero-percent { font-size: 64px; }
+  .usp-grid { grid-template-columns: 1fr; }
+}
+```
+
+  </style>
+</head>
+<body>
+
+<div class="email-wrapper">
+
+  <!-- HERO -->
+
+  <div class="hero">
+    <div class="logo-mark"></div>
+    <div class="zero-percent">0%</div>
+    <div class="zero-sub">Processing Fees. Always.</div>
+    <div class="divider-gold"></div>
+    <p style="font-size:13px; color:rgba(240,236,228,0.45); letter-spacing:0.5px;">
+      Keep every penny you earn — no deductions, no surprises.
+    </p>
+  </div>
+
+  <!-- GROW -->
+
+  <div class="grow-section">
+    <h2 class="grow-headline">
+      Grow your monthly profits<br>by <span>30%</span>
+    </h2>
+    <p class="grow-sub">
+      Join thousands of businesses that switched and never looked back.<br>
+      Simple, transparent, powerful — built for merchants who mean business.
+    </p>
+  </div>
+
+  <!-- CTA -->
+
+  <div class="cta-section">
+    <p class="cta-pre">Ready to Switch?</p>
+    <h3 class="cta-headline">Let's talk about your business</h3>
+    <a href="https://your-booking-link.com" class="cta-btn">📅 Book an Appointment</a>
+    <p class="cta-note">No commitment · 15-minute call · Instant setup</p>
+  </div>
+
+  <!-- USPS -->
+
+  <div class="usps">
+    <p class="usps-title">What you get</p>
+    <div class="usp-grid">
+      <div class="usp-item">
+        <span class="usp-icon">🕐</span>
+        <span class="usp-text">24/7 Customer Support</span>
+      </div>
+      <div class="usp-item">
+        <span class="usp-icon">⚡</span>
+        <span class="usp-text">Next Day Settlement</span>
+      </div>
+      <div class="usp-item">
+        <span class="usp-icon">🖥️</span>
+        <span class="usp-text">Free POS Machine</span>
+      </div>
+      <div class="usp-item">
+        <span class="usp-icon">🔍</span>
+        <span class="usp-text">No Hidden Charges</span>
+      </div>
+      <div class="usp-item">
+        <span class="usp-icon">✅</span>
+        <span class="usp-text">No Setup Cost</span>
+      </div>
+      <div class="usp-item">
+        <span class="usp-icon">🚫</span>
+        <span class="usp-text">No Monthly Fees</span>
+      </div>
+      <div class="usp-item">
+        <span class="usp-icon">🔓</span>
+        <span class="usp-text">No Early Termination Fees</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="footer">
+    <p>
+            <a href="#">Unsubscribe</a> · <a href="#">Privacy Policy</a> · <a href="#">Terms</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
